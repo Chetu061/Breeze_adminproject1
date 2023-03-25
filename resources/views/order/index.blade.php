@@ -32,10 +32,10 @@
                   <thead>
                     <tr>
                       <th style="width:5px">ID</th>
-                      <th style="width:10px">name</th>
-                      <th style="width:15px">prize</th>
-                      <th style="width:10px">total</th>
-                   
+                      <th style="width:20px">name</th>
+                      <th style="width:20px">prize</th>
+                      <th style="width:20px">total</th>
+                   <th  style="width:10px">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -45,12 +45,9 @@
                         <td> {{$d->id}}</td>
                         <td>{{$d->name}}</td>
                        <td>{{$d->prize}}</td>
-<td>{{$d->total}}</td>
+                       <td>{{$d->total}}</td>
+<td><button class="btn btn-success">view</button></td>
 
-
-                       
-                       
-                      
                   </tr>
                       @endforeach
                   </tbody>

@@ -18,7 +18,7 @@ public function store(Request $request)
 {$request->validate(
     ['title'=>'required',
     'description'=>'required',
-    'image'=>'required',
+    'images'=>'required',
     'status'=>'required'
     
     ]); 
@@ -26,33 +26,18 @@ public function store(Request $request)
     $data->title=$request->title;
     $data->description=$request->description;
 
-
-    $validatedData = $request->validate([
-        'images.*' => 'required|image|max:2048'
-    ]);
-
-    foreach ($request->file('images') as $image) {
-        $filename = $image->getClientOriginalName();
-        $path = $image->store('public/images');
-        Cms::create([
-            'filename' => $filename,
-            'path' => $path
-           
-        ]);
+    if($files=$request->file('images')){
+        foreach($files as $file){
+            $name=$file->getClientOriginalName();
+        $file->move('uploads/car/',$name);
+        $images[]=$name;
+        }
     }
-    return redirect()->back()->with('success', 'Images uploaded successfully.');
-
-
- // if ($request->hasFile(key: 'image')) {
-    //     $file = $request->image;
-    //     $extension = $file->getClientOriginalExtension();
-    //     $filename = time() . '.' . $extension;
-    //     $file->move('uploads', $filename);
-    //     $data->image = $filename;
-    // }
+    $data->images =   implode("|",$images);
     $data->status =$request->status; 
+    // dd($data);
     $data->save();
-    dd($data);
+   
 return redirect()->route('cms.index')->with('message',"Data Store Successfully!");
 }
 
@@ -76,16 +61,16 @@ public function update(Request $request,$id)
     
     
     
-    if ($request->hasFile(key: 'image')) 
+    if ($request->hasFile(key: 'images')) 
     {
-        $file = $request->image;
+        $file = $request->images;
         $extension = $file->getClientOriginalExtension();
         $filename = time() . '.' . $extension;
         $file->move('uploads', $filename);
-        $data->image = $filename;
+        $data->images= $filename;
     }
     $data->status= $request->status;
-    //dd($data);
+    dd($data);
 
     $data->save();
     return redirect()->route('cms.index')->with('message',"Data Update Successfully!");

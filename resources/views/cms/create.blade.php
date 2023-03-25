@@ -38,11 +38,16 @@
                       <textarea type="text" class="form-control" id="description" placeholder="Enter description"
           name="description" value="{{old('description')}}"></textarea>
                     </div>
+                  
                     <div class="form-group">
-                      <label for="image">Image</label>
-                      <input type="file" aria-describedby="image"  class="form-control" 
-                      id="image"  value="{{old('image')}}"name="image[]"multiple>
+                      <label class="control-label col-sm-2" for="images">Images:</label>
+                      <div class="col-sm-10">
+                      <input required  type="file" aria-describedby="images"  class="form-control" 
+                      id="images" name="images[]" value="images" multiple>
+                      </div>
                     </div>
+ 
+
 
                     <div class="form-group">
                       <label class="form-label" for="status">Status Type

@@ -47,16 +47,20 @@
                         <td>{{$d->title}}</td>
                        <td>{!!$d->description!!}</td>
 
+                       <td>
+              
+                        <?php
+                         $img_url = explode("|",$d->images);
+                        
+           
+                         ?> 
+                         @foreach($img_url as $img)
+                         <img src="{{ asset('uploads/car/'.$img) }}" width="70px" height="70px" alt="Image">
+                         @endforeach
+                        
+                     </td>
 
-
-                       @foreach($images as $image)
-    <img src="{{ Storage::url($image->path) }}" alt="{{ $image->filename }}">
-@endforeach
-
-                       {{-- <td>
-                        <img src="{{asset('uploads/'.$d->image)}}"
-                       width="50px"
-                       height="50px"alt="not image"></td> --}}
+                     
                        
                        @if($d->status==0)
                         <td> <span class="badge badge-danger">Deactive</span></td> 

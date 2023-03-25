@@ -261,13 +261,25 @@
             </a></li>
 
             <li class="nav-item">
+              <a href="{{route('order.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Order
+                  {{-- <i class="right fas fa-angle-left"></i> --}}
+                </p>
+              </a></li>
+
+            <li class="nav-item">
               {{-- <i class="nav-icon fas fa-circle"></i> --}}
-                <form method="POST" action="{{ route('logout') }}">
+              {{-- auth.php --}}
+                <form method="POST" action="{{route('logout') }}">
                   @csrf
-       <x-dropdown-link :href="route('logout')"
+                  {{-- navigation.blade.php code --}}
+                  <x-dropdown-link :href="route('logout')"
                   onclick="event.preventDefault();
-                              this.closest('form').submit();">
-              {{ __('Log Out') }}
+                  
+                              this.closest('form').submit();"><i class="nav-icon fas fa-circle">
+           </i>{{('Log Out')}}</i>
           </x-dropdown-link></form>
          </li>
               

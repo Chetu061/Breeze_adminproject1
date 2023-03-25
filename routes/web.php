@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CmsController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -72,3 +74,6 @@ Route::post('cms/update/{id}',[CmsController::class,'update'])->name('cms.update
 Route::get('cms/delete/{id}',[CmsController::class,'delete'])->name('cms.delete');
 //order controller
 Route::get('order/index',[OrderController::class,'index'])->name('order.index');
+
+//brand route
+Route::get('brand/create',[BrandController::class,'create'])->name('brand.create');
