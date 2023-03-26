@@ -25,30 +25,34 @@
             </ul>
             </div>
             @endif
-            <form id="quickForm" action="{{route('brand.store')}}" method="post">
+            <form id="quickForm" action="{{route('brand.update',$data->id)}}" method="post">
               @csrf
+            
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Enter Name</label>
-                    <input type="text" name="name" class="form-control" value="{{old('name')}}"id="exampleInputEmail1" 
+                    <input type="text" name="name" class="form-control" value="{{$data->name}}"id="exampleInputEmail1" 
                     placeholder="Enter name">
                   </div>
 
+                
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Enter User_id </label>
-                    <input type="number" name="user_id" class="form-control" value="{{old('user_id')}}"id="exampleInputEmail1" 
+                    <label for="exampleInputEmail1">Enter UserID </label>
+                    <input type="number" name="user_id" class="form-control" value="{{$data->user_id}}"id="exampleInputEmail1" 
                     placeholder="Enter user_id ">
                   </div>
                 
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Enter Product_id </label>
-                    <input type="number" name="product_id" class="form-control" value="{{old('product_id')}}"
-                    id="exampleInputEmail1" 
+                 <div class="form-group">
+                    <label for="exampleInputEmail1">Enter ProductID</label>
+                    <input type="number" name="product_id" class="form-control" value="{{$data->product_id}}"id="exampleInputEmail1" 
                     placeholder="Enter product_id">
-                  </div>
+                      
                    
+                  </div>
+                
+                  
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
                 </div>
    </form>
             </div>

@@ -35,9 +35,9 @@
                     </div>
           
                 <div class="form-group">
-                  <label for="image">Image</label>
-                  <input type="file" aria-describedby="image"  class="form-control"
-                  id="image" name="image" value="{{ $data->image }}">
+                  <label for="images">Image</label>
+                  <input type="file" aria-describedby="images"  class="form-control"
+                  id="images" name="images" value="{{ $data->images }}">
                 </div>
                   
                 <div class="mb-3 col-md-6">

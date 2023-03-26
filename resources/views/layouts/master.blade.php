@@ -268,6 +268,23 @@
                   {{-- <i class="right fas fa-angle-left"></i> --}}
                 </p>
               </a></li>
+               <li class="nav-item">
+                <a href="{{route('brand.create')}}" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Brand
+                    {{-- <i class="right fas fa-angle-left"></i> --}}
+                  </p>
+                </a></li> 
+
+                <li class="nav-item">
+                  <a href="{{route('color.create')}}" class="nav-link">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                      Color
+                      {{-- <i class="right fas fa-angle-left"></i> --}}
+                    </p>
+                  </a></li> 
 
             <li class="nav-item">
               {{-- <i class="nav-icon fas fa-circle"></i> --}}
@@ -279,7 +296,7 @@
                   onclick="event.preventDefault();
                   
                               this.closest('form').submit();"><i class="nav-icon fas fa-circle">
-           </i>{{('Log Out')}}</i>
+           </i>{{('Log Out')}}
           </x-dropdown-link></form>
          </li>
               
