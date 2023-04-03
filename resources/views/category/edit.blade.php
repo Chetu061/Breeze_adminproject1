@@ -15,13 +15,13 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="{{route('category.update',$data->id)}}" method="post">
+              <form id="quickForm" action="{{route('category.update',$cate->id)}}" method="post">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Enter Title</label>
                     <input type="text" name="title" class="form-control" id="exampleInputEmail1" 
-                    value="{{$data->title}}"
+                    value="{{$cate->title}}"
                     placeholder="Enter Title">
                   </div>
                  
@@ -29,7 +29,7 @@
                   <div class="mb-3 col-md-6">
                     <label class="form-label" for="status">Status Type<span class="text-danger">
                             *</span></label>
-                    <select class="form-control" name="status"value="{{$data->status}}">
+                    <select class="form-control" name="status"value="{{$cate->status}}">
                         <option value="">Select status Type</option>
                         <option value="0">Active</option>
                         <option value="1">Deactive</option>

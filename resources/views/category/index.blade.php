@@ -12,7 +12,8 @@
               </div>
                <div class="card-header">
                 <h3 class="card-title"><a href="{{route('category.create')}}">
-                  <button type="button" class="btn btn-primary btn-sm">Add</button></h3></a>
+                  <button type="button" class="btn btn-primary btn-sm">Add </button> </h3></a>
+               
               </div> 
               <!-- /.card-header -->
               <div class="card-body">
@@ -34,7 +35,7 @@
                   </thead>
                   <tbody>
                     
-                      @foreach($data as $d)
+                      @foreach($cate as $d)
                       <tr>
                         
                          <td> {{$d->id}}</td>
@@ -52,9 +53,9 @@
                       <button class="btn btn-warning " type="button" class="btn btn-warning text-dark"> 
                               <a href="{{route('category.edit',$d->id)}}">
                                Edit</button></a>
-                            <button  type="button" class="btn btn-danger"> 
-                              <a href="{{route('category.delete',$d->id)}}">
-                            Delete</button></a>
+                           
+                            <button type="button" class="btn btn-danger">
+                              <a href="{{route('category.delete',$d->id)}}">Delete</a></button>
                   </td>
                   
                   
@@ -84,7 +85,7 @@
   {
 
     $('#dataTable').DataTable({
-      "pageLength" :2
+      "pageLength" :5
   });//dataTable is id of <table>
   });
   </script>

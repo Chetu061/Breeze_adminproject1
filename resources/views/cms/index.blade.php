@@ -3,11 +3,7 @@
 @section('css')
 @section('content')
 
-
-  
-
-
-     <!-- Main content -->
+<!-- Main content -->
      <section class="content">
       <div class="container-fluid">
         <div class="row">
@@ -19,6 +15,10 @@
               <div class="card-header">
                 <h3 class="card-title"><a href="{{route('cms.create')}}">
                   <button type="button" class="btn btn-primary btn-sm">Add</button></h3></a>
+                  {{-- <h3 class="card-title">  <a href="{{route('cms.trash')}}">
+                    .  .   <button type="button"class="btn btn-success">
+               go to trash</button></h3><br><br> --}}
+
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -45,26 +45,15 @@
                        <tr>
                         <td> {{$d->id}}</td>
                         <td>{{$d->title}}</td>
-                       <td>{!!$d->description!!}</td>
-
-                       <td>
-              
-                        <?php
-                         $img_url = explode("|",$d->images);
-                        
-           
-                         ?> 
+                       <td>{!!$d->description!!}</td><td>
+            <?php
+            $img_url = explode("|",$d->images);
+            ?> 
                          @foreach($img_url as $img)
                          <img src="{{ asset('uploads/car/'.$img) }}" width="70px" height="70px" alt="Image">
                          @endforeach
-                        
-                     </td>
-
-                     
-                       
-                       @if($d->status==0)
-                        <td> <span class="badge badge-danger">Deactive</span></td> 
-                        
+                        </td>@if($d->status==0)
+                        <td><span class="badge badge-danger">Deactive</span></td> 
                         @else
                         <td><span class="badge badge-success">Active</span></td> 
                   

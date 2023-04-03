@@ -31,12 +31,12 @@ public function store(Request $request)
     }
     $data->category_id =$request->category_id; 
     $data->save();
-return redirect()->route('product.index')->with('message',"Data Store Successfully!");
+return redirect()->route('products')->with('message',"Data Store Successfully!");
 }
 
 public function index() 
 { $data = Product::with('category')->get();
-//$data=Product::all();
+    // dd($data);//$data=Product::all();
     return view('product.index',compact('data'));
 } 
 public function edit($id)
@@ -56,12 +56,12 @@ public function update(Request $request,$id)
     //dd($user);
 
     $data->save();
-    return redirect()->route('product.index')->with('message',"Data Update Successfully!");
+    return redirect()->route('products')->with('message',"Data Update Successfully!");
 }public function delete($id)
 {
     $data=Product::find($id);
     $data->delete();
-    return redirect()->route('product.index')->with('message',"Data Delete Successfully!");
+    return redirect()->route('products')->with('message',"Data Delete Successfully!");
 }
 
 }  

@@ -42,15 +42,17 @@
                     placeholder="Enter user_id ">
                   </div>
                 
-                 <div class="form-group">
-                    <label for="exampleInputEmail1">Enter ProductID</label>
-                    <input type="number" name="product_id" class="form-control" value="{{$data->product_id}}"id="exampleInputEmail1" 
-                    placeholder="Enter product_id">
                       
-                   
-                  </div>
-                
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Choose Product_id</label>
+                      <select class="form-control" id="exampleFormControlSelect1" name="product_id" value="{{old('product_id')}}">
+                           @foreach($product as $pro)
+                        <option value="{{$pro->id}}">{{$pro->title}}</option>
+                          @endforeach 
+                      </select>
+                    </div> 
                   
+  
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>
@@ -69,10 +71,4 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-  
-
-
-
-
-
 @endsection

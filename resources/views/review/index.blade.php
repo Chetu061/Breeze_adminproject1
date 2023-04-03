@@ -14,11 +14,11 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Product Management</h3>
+                <h3 class="card-title">Review Management</h3>
               </div>
               <div class="card-header">
-                <h3 class="card-title"><a href="{{route('product.create')}}">
-                  <button type="button" class="btn btn-primary btn-sm">Add</button></h3></a>
+                {{-- <h3 class="card-title"><a href="{{route('cms.create')}}">
+                  <button type="button" class="btn btn-primary btn-sm">Add</button></h3></a> --}}
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -32,11 +32,12 @@
                   <thead>
                     <tr>
                       <th style="width:5px">ID</th>
-                      <th style="width:10px">Title</th>
-                      <th style="width:15px">Description</th>
-                      <th style="width:10px">Image</th>
-                      <th style="width:10px">Category_id</th>
-                      <th style="width:50px">Action</th>
+                      <th style="width:20px">review_user_id</th>
+                      <th style="width:20px">review_product_id</th>
+                      <th style="width:20px">review_message</th>
+                      <th style="width:5px">review_rating</th>
+                   <th  style="width:10px">Action</th>
+                   
                     </tr>
                   </thead>
                   <tbody>
@@ -44,26 +45,12 @@
                       @foreach($data as $d)
                        <tr>
                         <td> {{$d->id}}</td>
-                        <td>{{$d->title}}</td>
-                       <td>{{$d->description}}</td>
-                       <td>
-                        <img src="{{asset('uploads/'.$d->image)}}"
-                       width="50px"
-                       height="50px"alt="not image"></td>
-                       
-                     {{-- not work --}}
-                        <td>{{$d->category->title}}</td> 
-                       <td> 
-                         <button  type="button" class="btn btn-warning btn-sm"> 
-                           <a href="{{route('product.edit',$d->id)}}">
-                          Edit</button> </a>                                             
+                        <td>{{$d->review_user_id}}</td>
+                       <td>{{$d->review_product_id}}</td>
+                       <td>{{$d->review_message}}</td>
+                       <td>{{$d->review_rating}}</td>
+                 <td><button class="btn btn-success">view</button></td>
 
-                          
-                            <button  type="button" class="btn btn-danger btn-sm"> 
-                             <a href="{{route('product.delete',$d->id)}}"> 
-
-                              Delete</button></a> 
-                  </td>
                   </tr>
                       @endforeach
                   </tbody>

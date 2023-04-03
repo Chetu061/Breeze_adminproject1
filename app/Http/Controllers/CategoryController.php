@@ -13,8 +13,8 @@ public function admin()
 public function index()
 {
     
-$data=Category::all();
-    return view('category.index',compact('data'));
+$cate=Category::all();
+return view('category.index',compact('cate'));//view madhe loaction nusar path
 }
 
 public function create()
@@ -29,33 +29,37 @@ public function store(Request $request )
     ['title'=>'required',
     'status'=>'required'
     ]);
-    $data=new Category();
-    $data->title=$request->title;
-    $data->status=$request->status;
+    $cate=new Category();
+    $cate->title=$request->title;
+    $cate->status=$request->status;
     //dd($user);
 
-    $data->save();
-    return redirect()->route('category.index')->with('message',"Data Added Successfully!");
+    $cate->save();
+    return redirect()->route('categories')->with('message',"Data Added Successfully!");//url nusar path
 }
 public function edit($id)
 {
-    $data=Category::find($id);
-    return view('category.edit',compact('data'));
+    $cate=Category::find($id);
+    return view('category.edit',compact('cate'));
 }
 public function update(Request $request,$id)
 {
-    $data=Category::find($id);
-    $data->title=$request->title;
-    $data->status=$request->status;
+    $cate=Category::find($id);
+    $cate->title=$request->title;
+    $cate->status=$request->status;
     //dd($user);
 
-    $data->save();
-    return redirect()->route('category.index')->with('message',"Data Update Successfully!");
+    $cate->save();
+    return redirect()->route('categories')->with('message',"Data Update Successfully!");
 }
 public function delete($id)
 {
-    $data=Category::find($id);
-    $data->delete();
-    return redirect()->route('category.index')->with('message',"Data Delete Successfully!");
+    $cate=Category::find($id);
+    $cate->delete();
+    return redirect()->route('categories')->with('message',"Data Delete Successfully!");
 }
+
+
 }
+
+

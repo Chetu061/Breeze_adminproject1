@@ -7,6 +7,8 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -53,41 +55,61 @@ Route::get('admin',[CategoryController::class,'admin']) ->name('admin');
 
 Route::get('category/create',[CategoryController::class,'create'])->name('category.create');
 Route::post('category/store',[CategoryController::class,'store'])->name('category.store');
-Route::get('category/index',[CategoryController::class,'index'])->name('category.index');
+Route::get('categories',[CategoryController::class,'index'])->name('categories');
 Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::post('category/update/{id}',[CategoryController::class,'update'])->name('category.update');
 Route::get('category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
 
+
 //product route 
 Route::get('product/create',[ProductController::class,'create'])->name('product.create');
 Route::post('product/store',[ProductController::class,'store'])->name('product.store');
- Route::get('product/index',[ProductController::class,'index'])->name('product.index');
+ Route::get('products',[ProductController::class,'index'])->name('products');
  Route::get('product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
 Route::post('product/update/{id}',[ProductController::class,'update'])->name('product.update');
 Route::get('product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
 
+
 //cms route
 Route::get('cms/create',[CmsController::class,'create'])->name('cms.create');
 Route::post('cms/store',[CmsController::class,'store'])->name('cms.store');
- Route::get('cms/index',[CmsController::class,'index'])->name('cms.index');
+ Route::get('cms',[CmsController::class,'index'])->name('cms');
  Route::get('cms/edit/{id}',[CmsController::class,'edit'])->name('cms.edit');
 Route::post('cms/update/{id}',[CmsController::class,'update'])->name('cms.update');
 Route::get('cms/delete/{id}',[CmsController::class,'delete'])->name('cms.delete');
+//Softdelete route
+// Route::get('cms/trash',[CmsController::class,'trash'])->name('cms.trash');
+// Route::get('cms/forceDelete/{id}',[CmsController::class,'forceDelete'])->name('cms.forceDelete');
+// Route::get('cms/restore/{id}',[CmsController::class,'restore'])->name('cms.restore');
+
 //order controller
 Route::get('order/index',[OrderController::class,'index'])->name('order.index');
 
 //brand route
 Route::get('brand/create',[BrandController::class,'create'])->name('brand.create');
 Route::post('brand/store',[BrandController::class,'store'])->name('brand.store');
- Route::get('brand/index',[BrandController::class,'index'])->name('brand.index');
+ Route::get('brands',[BrandController::class,'index'])->name('brands');
  Route::get('brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit');
 Route::post('brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
 Route::get('brand/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');
+//Softdelete route
+// Route::get('brand/trash',[BrandController::class,'trash'])->name('brand.trash');
+// Route::get('brand/forceDelete/{id}',[BrandController::class,'forceDelete'])->name('brand.forceDelete');
+// Route::get('brand/restore/{id}',[BrandController::class,'restore'])->name('brand.restore');
 
 //color route
 Route::get('color/create',[ColorController::class,'create'])->name('color.create');
 Route::post('color/store',[ColorController::class,'store'])->name('color.store');
- Route::get('color/index',[ColorController::class,'index'])->name('color.index');
+ Route::get('colors',[ColorController::class,'index'])->name('colors');
  Route::get('color/edit/{id}',[ColorController::class,'edit'])->name('color.edit');
 Route::post('color/update/{id}',[ColorController::class,'update'])->name('color.update');
 Route::get('color/delete/{id}',[ColorController::class,'delete'])->name('color.delete');
+//Softdelete route
+// Route::get('color/trash',[ColorController::class,'trash'])->name('color.trash');
+// Route::get('color/forceDelete/{id}',[ColorController::class,'forceDelete'])->name('color.forceDelete');
+// Route::get('color/restore/{id}',[ColorController::class,'restore'])->name('color.restore');
+
+
+//review route
+Route::get('review/index',[ReviewController::class,'index'])->name('review.index');
+

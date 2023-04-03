@@ -25,7 +25,6 @@ public function store(Request $request)
     $data=new Cms();
     $data->title=$request->title;
     $data->description=$request->description;
-
     if($files=$request->file('images')){
         foreach($files as $file){
             $name=$file->getClientOriginalName();
@@ -35,15 +34,16 @@ public function store(Request $request)
     }
     $data->images =   implode("|",$images);
     $data->status =$request->status; 
-    // dd($data);
+     //dd($data);
     $data->save();
    
-return redirect()->route('cms.index')->with('message',"Data Store Successfully!");
+return redirect()->route('cms')->with('message',"Data Store Successfully!");
 }
 
 public function index() 
-{ $data = Cms::with('category')->get();
+{ $data =Cms::with('category')->get();
 //$data=Product::all();
+//dd($data);
     return view('cms.index',compact('data'));
 } 
 public function edit($id)
@@ -58,10 +58,7 @@ public function update(Request $request,$id)
     $data=Cms::find($id);
     $data->title=$request->title;
     $data->description=$request->description;
-    
-    
-    
-    if ($request->hasFile(key: 'images')) 
+     if ($request->hasFile(key: 'images')) 
     {
         $file = $request->images;
         $extension = $file->getClientOriginalExtension();
@@ -70,15 +67,14 @@ public function update(Request $request,$id)
         $data->images= $filename;
     }
     $data->status= $request->status;
-    dd($data);
-
+    //dd($data);
     $data->save();
-    return redirect()->route('cms.index')->with('message',"Data Update Successfully!");
+    return redirect()->route('cms')->with('message',"Data Update Successfully!");
 }public function delete($id)
 {
     $data=Cms::find($id);
     $data->delete();
-    return redirect()->route('cms.index')->with('message',"Data Delete Successfully!");
+    return redirect()->route('cms')->with('message',"Data Delete Successfully!");
 }
 
 }  

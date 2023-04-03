@@ -215,26 +215,19 @@
                 <!--<i class="right fas fa-angle-left"></i>-->
               </p>
             </a>
-              
-            <li class="nav-item">
-              <a href="{{route('category.create')}}" class="nav-link">
+ <li class="nav-item">
+              <a href="{{route('categories')}}" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
                 <p>
                   Category
                 </p>
               </a></li>
-              {{-- <ul class="nav nav-treeview"> --}}
+            
                 
-                {{-- <li class="nav-item">
-                  <a href="{{route('category.index')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    {{-- <p>table</p>
-                  </a>
-                </li>
-                 </ul> --}} 
+               
 
  <li class="nav-item">
-            <a href="{{route('product.create')}}" class="nav-link">
+            <a href="{{route('products')}}" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Product
@@ -252,7 +245,7 @@
         {{-- not working        --}}
 
   <li class="nav-item">
-            <a href="{{route('cms.create')}}" class="nav-link">
+            <a href="{{route('cms')}}" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
               <p>
                 Cms
@@ -269,7 +262,7 @@
                 </p>
               </a></li>
                <li class="nav-item">
-                <a href="{{route('brand.create')}}" class="nav-link">
+                <a href="{{route('brands')}}" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
                     Brand
@@ -278,13 +271,22 @@
                 </a></li> 
 
                 <li class="nav-item">
-                  <a href="{{route('color.create')}}" class="nav-link">
-                    <i class="nav-icon fas fa-copy"></i>
+                  <a href="{{route('colors')}}" class="nav-link">
+                    <i class="nav-icon fas fa-tree"></i>
                     <p>
                       Color
                       {{-- <i class="right fas fa-angle-left"></i> --}}
                     </p>
                   </a></li> 
+
+                  <li class="nav-item">
+                    <a href="{{route('review.index')}}" class="nav-link">
+                      <i class="nav-icon fas fa-chart-pie"></i>
+                      <p>
+                        Review
+                        {{-- <i class="right fas fa-angle-left"></i> --}}
+                      </p>
+                    </a></li> 
 
             <li class="nav-item">
               {{-- <i class="nav-icon fas fa-circle"></i> --}}

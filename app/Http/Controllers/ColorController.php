@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 use App\Models\Color;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ColorController extends Controller
 {
     public function create()
-{
-    $data=Color::all();
-    return view('color.create',compact('data'));
+{$product = Product::all();
+    $user=User::all();
+   // $data=Color::all();
+    return view('color.create',compact('product','user'));
 }
 public function store(Request $request)
 {$request->validate(
@@ -25,16 +28,20 @@ public function store(Request $request)
     // dd($data);
     $data->save();
    
-return redirect()->route('color.index')->with('message',"Data Store Successfully!");
+return redirect()->route('colors')->with('message',"Data Store Successfully!");
 }
 public function edit($id)
 {
     $data=Color::find($id);
+    $product = Product::all(); //relation changedouble
 
-    return view('color.edit',compact('data'));
+    return view('color.edit',compact('data','product'));
 }
 public function index() 
-{ $data = Color::all();
+{ //only null record show
+    // $data = Color::whereNull('deleted_at')->with('product')->get();
+$data=Color::all();
+   // dd($data);
 //$data=Product::all();
     return view('color.index',compact('data'));
 } 
@@ -43,7 +50,7 @@ public function index()
 {
     $data=Color::find($id);
     $data->delete();
-    return redirect()->route('color.index')->with('message',"Data Delete Successfully!");
+    return redirect()->route('colors')->with('message',"Data Delete Successfully!");
 }
 public function update(Request $request,$id)
 {
@@ -53,7 +60,7 @@ public function update(Request $request,$id)
     $data->color_product_id=$request->color_product_id;
     //dd($data);
 $data->save();
-    return redirect()->route('color.index')->with('message',"Data Update Successfully!");
+    return redirect()->route('colors')->with('message',"Data Update Successfully!");
 }
 
 

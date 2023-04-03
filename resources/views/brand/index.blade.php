@@ -13,6 +13,7 @@
                <div class="card-header">
                 <h3 class="card-title"><a href="{{route('brand.create')}}">
                   <button type="button" class="btn btn-primary btn-sm">Add</button></h3></a>
+
               </div> 
               <!-- /.card-header -->
               <div class="card-body">
@@ -77,7 +78,7 @@
   {
 
     $('#dataTable').DataTable({
-      "pageLength" :2
+      "pageLength" :5
   });//dataTable is id of <table>
   });
   </script>

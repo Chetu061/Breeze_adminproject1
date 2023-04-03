@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Brand extends Model
 {
     use HasFactory;
+    public function product(){
+        return $this->hasOne(Product::class,'id','product_id');
+
+    }
+    public function user(){
+        return $this->hasOne(User::class,'id','name');
+        
+    }
 }

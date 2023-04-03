@@ -33,20 +33,25 @@
                     <input type="text" name="name" class="form-control" value="{{old('name')}}"id="exampleInputEmail1" 
                     placeholder="Enter name">
                   </div>
+    
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Enter User</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="user_id" value="{{old('user_id')}}">
+                         @foreach($user as $pro)
+                      <option value="{{$pro->id}}">{{$pro->name}}</option>
+                        @endforeach 
+                    </select>
+                  </div>
+                 
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Choose Product</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="product_id" value="{{old('product_id')}}">
+                         @foreach($product as $pro)
+                      <option value="{{$pro->id}}">{{$pro->title}}</option>
+                        @endforeach 
+                    </select>
+                  </div><!--end dropdown-->
 
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Enter User_id </label>
-                    <input type="number" name="user_id" class="form-control" value="{{old('user_id')}}"id="exampleInputEmail1" 
-                    placeholder="Enter user_id ">
-                  </div>
-                
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Enter Product_id </label>
-                    <input type="number" name="product_id" class="form-control" value="{{old('product_id')}}"
-                    id="exampleInputEmail1" 
-                    placeholder="Enter product_id">
-                  </div>
-                   
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
@@ -65,10 +70,4 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-  
-
-
-
-
-
-@endsection
+  @endsection

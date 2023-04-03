@@ -37,16 +37,18 @@
 
                 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Enter color_user_id </label>
+                    <label for="exampleInputEmail1">Enter user</label>
                     <input type="number" name="color_user_id" class="form-control" value="{{$data->color_user_id}}"id="exampleInputEmail1" 
                     placeholder="Enter color_user_id ">
                   </div>
-                
-                 <div class="form-group">
-                    <label for="exampleInputEmail1">Enter ProductID</label>
-                    <input type="number" name="color_product_id" class="form-control" value="{{$data->color_product_id}}"id="exampleInputEmail1" 
-                    placeholder="Enter color_product_id ">
-                       </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Choose product</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="color_product_id" value="{{old('color_product_id')}}">
+                         @foreach($product as $pro)
+                      <option value="{{$pro->id}}">{{$pro->title}}</option>
+                        @endforeach 
+                    </select>
+                  </div>
                 
                   
                 <div class="card-footer">
