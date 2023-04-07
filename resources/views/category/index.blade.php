@@ -1,6 +1,19 @@
 @extends('layouts.master')
 @section('content')
 
+<div class="container-fluid">
+  <div class="row mb-2">
+    <div class="col-sm-6">
+      <h1 class="m-0">Category</h1>
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Category</a></li>
+        <li class="breadcrumb-item active">Dashboard </li>
+      </ol>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</div>
      <!-- Main content -->
      <section class="content">
       <div class="container-fluid">
@@ -29,6 +42,7 @@
                     <tr>
                       <th style="width: 10px">ID</th>
                       <th style="width: 20px">Title</th>
+                      <th style="width:10px">Image</th>
                       <th style="width: 30px">Status</th>
                       <th style="width: 40px">Action</th>
                     </tr>
@@ -40,7 +54,12 @@
                         
                          <td> {{$d->id}}</td>
                         <td>{{$d->title}}</td>
-                        
+                        <td>
+                          <img src="{{asset('uploads/'.$d->image)}}"
+                         width="50px"
+                         height="50px"alt="not image"></td>
+                         
+
                         @if($d->status==0)
                         <td> <span class="badge badge-danger">Deactive</span></td> 
                         

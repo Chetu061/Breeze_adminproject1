@@ -3,6 +3,19 @@
 
 
 
+<div class="container-fluid">
+  <div class="row mb-2">
+    <div class="col-sm-6">
+      <h1 class="m-0">Category</h1>
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Category</a></li>
+        <li class="breadcrumb-item active">Dashboard </li>
+      </ol>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</div>
 
     <!-- Main content -->
     <section class="content">
@@ -26,7 +39,7 @@
             </ul>
             </div>
             @endif
-           <form id="quickForm" action="{{route('category.store')}}" method="post">
+           <form id="quickForm" action="{{route('category.store')}}" method="post"enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -34,7 +47,13 @@
                     <input type="text" name="title" class="form-control" value="{{old('title')}}"id="exampleInputEmail1" 
                     placeholder="Enter Title">
                   </div>
-                
+                 
+                  <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" aria-describedby="image"  class="form-control" 
+                    id="image" name="image" >
+                  </div>
+
                  <div class="form-group">
                     <label class="form-label" for="status">Status Type
                       </label>

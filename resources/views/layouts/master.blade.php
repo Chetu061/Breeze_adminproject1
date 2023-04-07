@@ -40,15 +40,15 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="{{route('welcome.admin')}}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="{{route('welcome.contact')}}" class="nav-link">Contact</a>
       </li>
     </ul>
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    {{-- <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
@@ -166,7 +166,7 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
-    </ul>
+    </ul> --}}
   </nav>
   <!-- /.navbar -->
 
@@ -186,7 +186,12 @@
           <img src="{{asset('img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          {{-- username --}}
+          <?php
+          $user = Auth::user();
+          //dd($user)
+          ?>
+          <a href="#" class="d-block">{{$user->name}}</a> 
         </div>
       </div>
 
@@ -208,7 +213,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item  ">
-            <a href="{{route('welcome')}}" class="nav-link ">
+            <a class="nav-link " href="{{route('welcome.admin')}}" >
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -287,6 +292,18 @@
                         {{-- <i class="right fas fa-angle-left"></i> --}}
                       </p>
                     </a></li> 
+
+
+                    <li class="nav-item">
+                      <a href="{{route('contacts')}}" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                          Contact
+                          {{-- <i class="right fas fa-angle-left"></i> --}}
+                        </p>
+                      </a></li> 
+  
+
 
             <li class="nav-item">
               {{-- <i class="nav-icon fas fa-circle"></i> --}}
@@ -839,7 +856,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
+      {{-- <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Dashboard </h1>
@@ -851,7 +868,7 @@
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div><!-- /.container-fluid --> --}}
     </div>
     <!-- /.content-header -->
 

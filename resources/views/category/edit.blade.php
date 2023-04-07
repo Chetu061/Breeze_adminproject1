@@ -2,6 +2,20 @@
 @section('content')
 
 
+
+<div class="container-fluid">
+  <div class="row mb-2">
+    <div class="col-sm-6">
+      <h1 class="m-0">Category</h1>
+    </div><!-- /.col -->
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="#">Category</a></li>
+        <li class="breadcrumb-item active">Dashboard </li>
+      </ol>
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</div>
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -15,7 +29,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="{{route('category.update',$cate->id)}}" method="post">
+              <form id="quickForm" action="{{route('category.update',$cate->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -25,6 +39,11 @@
                     placeholder="Enter Title">
                   </div>
                  
+                  <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" aria-describedby="image"  class="form-control"
+                    id="image" name="image" value="{{$cate->image}}">
+                  </div>
                  
                   <div class="mb-3 col-md-6">
                     <label class="form-label" for="status">Status Type<span class="text-danger">

@@ -8,6 +8,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ContactController;
 
 
 
@@ -26,9 +29,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/',[WelcomeController::class,'welcome'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -47,9 +48,13 @@ require __DIR__.'/auth.php';
 Route::get('master', function () {
     return view('layouts.master');
 });
+Route::get('master1', function () {
+    return view('layouts.master1');
+});
+
 //project view
 //not work because give nickname in  welcome route
-Route::get('admin',[CategoryController::class,'admin']) ->name('admin');
+Route::get('headfoot',[CategoryController::class,'headfoot']) ->name('headfoot');
 
 //category route
 
@@ -113,3 +118,14 @@ Route::get('color/delete/{id}',[ColorController::class,'delete'])->name('color.d
 //review route
 Route::get('review/index',[ReviewController::class,'index'])->name('review.index');
 
+
+Route::get('home',[WelcomeController::class,'home'])->name('welcome.home');
+Route::get('contact',[WelcomeController::class,'contact'])->name('welcome.contact');
+Route::get('about',[WelcomeController::class,'about'])->name('welcome.about');
+Route::get('shop',[WelcomeController::class,'shop'])->name('welcome.shop');
+
+Route::get('admin',[WelcomeController::class,'admin'])->name('welcome.admin');
+
+//route of contact
+Route::get('contacts',[ContactController::class,'index'])->name('contacts');
+Route::post('contact_form/store',[ContactController::class,'store'])->name('contact_form.store');

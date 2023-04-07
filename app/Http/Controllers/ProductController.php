@@ -42,8 +42,7 @@ public function index()
 public function edit($id)
 {
     $data=Product::find($id);
-
-    $cust=Category::all();
+     $cust=Category::all();
     return view('product.edit',compact('data','cust'));
 }
 public function update(Request $request,$id)
@@ -51,7 +50,13 @@ public function update(Request $request,$id)
     $data=Product::find($id);
     $data->title=$request->title;
     $data->description=$request->description;
-    $data->image=$request->image;
+    if ($request->hasFile(key: 'image')) {
+        $file = $request->image;
+        $extension = $file->getClientOriginalExtension();
+        $filename = time() . '.' . $extension;
+        $file->move('uploads', $filename);
+        $data->image = $filename;
+    }
     $data->category_id = $request->category_id;
     //dd($user);
 

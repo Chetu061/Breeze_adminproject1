@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-public function admin()
+public function headfoot()
 {
-    return view('admin');
+    return view('headfoot');
 }
 public function index()
 {
@@ -31,6 +31,13 @@ public function store(Request $request )
     ]);
     $cate=new Category();
     $cate->title=$request->title;
+    if ($request->hasFile(key: 'image')) {
+        $file = $request->image;
+        $extension = $file->getClientOriginalExtension();
+        $filename = time() . '.' . $extension;
+        $file->move('uploads', $filename);
+        $cate->image = $filename;
+    }
     $cate->status=$request->status;
     //dd($user);
 
@@ -46,6 +53,13 @@ public function update(Request $request,$id)
 {
     $cate=Category::find($id);
     $cate->title=$request->title;
+    if ($request->hasFile(key: 'image')) {
+        $file = $request->image;
+        $extension = $file->getClientOriginalExtension();
+        $filename = time() . '.' . $extension;
+        $file->move('uploads', $filename);
+        $cate->image = $filename;
+    }
     $cate->status=$request->status;
     //dd($user);
 
