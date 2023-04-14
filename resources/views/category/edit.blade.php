@@ -10,8 +10,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Category</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Category_Edit_Form </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -40,26 +40,25 @@
                   </div>
                  
                   <div class="form-group">
-                    <label for="image">Image</label>
+                    <label for="image"> Choose Image</label>
                     <input type="file" aria-describedby="image"  class="form-control"
                     id="image" name="image" value="{{$cate->image}}">
                   </div>
-                 
-                  <div class="mb-3 col-md-6">
-                    <label class="form-label" for="status">Status Type<span class="text-danger">
-                            *</span></label>
-                    <select class="form-control" name="status"value="{{$cate->status}}">
-                        <option value="">Select status Type</option>
-                        <option value="0">Active</option>
-                        <option value="1">Deactive</option>
-                    </select>
-                  
-                </div>  
-                  </div>
-                  
+             
+
+              <div class="form-group">
+                  <label class="form-label" for="status">Choose Status<span class="text-danger">
+                    *</span>
+                    </label>
+                  <select class="form-control" name="status" value="{{$cate->status}}">
+                      <option value="">Select status</option>
+                      <option value="1">Active</option>
+                      <option value="0">Deactive</option>
+                     
+                  </select>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>

@@ -1,19 +1,21 @@
-@extends('layouts.master')
+@extends('layouts.master1')
 @section('content')
+
 
 <div class="container-fluid">
   <div class="row mb-2">
     <div class="col-sm-6">
-      <h1 class="m-0">Product</h1>
+      <h1 class="m-0"></h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Product_Form </li>
+        <li class="breadcrumb-item active">User Form </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
 </div>
+<script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -23,7 +25,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Product Form</h3>
+                <h3 class="card-title"> Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -36,40 +38,42 @@
             </ul>
             </div>
             @endif
-              <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data"> 
-                @csrf
+              <form >
+                
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Enter Title</label>
-                    <input type="text" name="title" class="form-control" value="{{old('title')}}"id="exampleInputEmail1" 
-                    placeholder="Enter Title">
+                    <label for="exampleInputEmail1">Enter Name</label>
+                    <input type="text" name="name" class="form-control" value="{{old('name')}}"
+                    id="exampleInputEmail1" 
+                    placeholder="Enter name">
                   </div>
                  
                   <div class="form-group">
-                      <label for="exampleInputEmail1">Enter Description</label>
-                      <input type="text" name="description" class="form-control" 
-                      value="{{old('description')}}" id="exampleInputEmail1" 
-                      placeholder="Enter description">
+                      <label for="exampleInputEmail1">Enter Email</label>
+                      <input type="text" class="form-control" id="email" placeholder="Enter email"
+          name="email" value="{{old('email')}}"></textarea>
                     </div>
-                    <div class="form-group">
-                      <label for="image">Choose Image</label>
-                      <input type="file" aria-describedby="image"  class="form-control" 
-                      id="image" name="image" value="{{old('image')}}">
-                    </div>
-
                   
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">Choose Category</label>
-                      <select class="form-control" id="exampleFormControlSelect1" name="category_id">
-                          @foreach($data as $d)
-                        <option value="{{$d->id}}">{{$d->title}}</option>
-                          @endforeach
-                      </select>
-                    </div>
+                      <label class="control-label " for="images">Choose Password</label>
+                      <input  type="text" aria-describedby="images"  class="form-control" 
+                      id="password" name="password" value="password" >
+                      </div>
+                  
+                      <div class="form-group">
+                        <label for="image">Choose Image</label>
+                        <input type="file" aria-describedby="image"  class="form-control" 
+                        id="image" name="image" value="{{old('image')}}">
+                      </div>
                   
                     <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    
+                    <script>
+                    ClassicEditor
+                    .create(document.querySelector('#description'))
+                    .catch(error=>{
+                      console.error(error);
+                    })</script>
                   </div>
               </form>
             </div>

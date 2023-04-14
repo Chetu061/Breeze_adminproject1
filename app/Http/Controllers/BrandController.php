@@ -36,8 +36,8 @@ public function edit($id)
 {
     $data=Brand::find($id);
     $product = Product::all(); //relation changedouble
-
-    return view('brand.edit',compact('data','product'));
+    $user=User::all();
+    return view('brand.edit',compact('data','product','user'));
 }
 public function index() 
 { //$data = Brand::all();

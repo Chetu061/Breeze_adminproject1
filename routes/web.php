@@ -88,7 +88,7 @@ Route::get('cms/delete/{id}',[CmsController::class,'delete'])->name('cms.delete'
 // Route::get('cms/restore/{id}',[CmsController::class,'restore'])->name('cms.restore');
 
 //order controller
-Route::get('order/index',[OrderController::class,'index'])->name('order.index');
+Route::get('orders',[OrderController::class,'index'])->name('orders');
 
 //brand route
 Route::get('brand/create',[BrandController::class,'create'])->name('brand.create');
@@ -116,16 +116,21 @@ Route::get('color/delete/{id}',[ColorController::class,'delete'])->name('color.d
 
 
 //review route
-Route::get('review/index',[ReviewController::class,'index'])->name('review.index');
+Route::get('reviews',[ReviewController::class,'index'])->name('reviews');
 
 
 Route::get('home',[WelcomeController::class,'home'])->name('welcome.home');
 Route::get('contact',[WelcomeController::class,'contact'])->name('welcome.contact');
 Route::get('about',[WelcomeController::class,'about'])->name('welcome.about');
 Route::get('shop',[WelcomeController::class,'shop'])->name('welcome.shop');
+Route::get('cart',[WelcomeController::class,'cart'])->name('welcome.cart');
+Route::get('checkout',[WelcomeController::class,'checkout'])->name('welcome.checkout');
+Route::get('thankyou',[WelcomeController::class,'thankyou'])->name('welcome.thankyou');
+Route::get('shopsingle',[WelcomeController::class,'shopsingle'])->name('welcome.shopsingle');
 
 Route::get('admin',[WelcomeController::class,'admin'])->name('welcome.admin');
 
 //route of contact
 Route::get('contacts',[ContactController::class,'index'])->name('contacts');
 Route::post('contact_form/store',[ContactController::class,'store'])->name('contact_form.store');
+Route::get('form',[WelcomeController::class,'form'])->name('welcome.form');

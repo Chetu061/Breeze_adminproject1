@@ -11,8 +11,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Order</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Order </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -44,9 +44,9 @@
                   <thead>
                     <tr>
                       <th style="width:5px">ID</th>
-                      <th style="width:20px">name</th>
-                      <th style="width:20px">prize</th>
-                      <th style="width:20px">total</th>
+                      <th style="width:20px">Name</th>
+                      <th style="width:20px">Prize</th>
+                      <th style="width:20px">Total</th>
                    <th  style="width:10px">Action</th>
                     </tr>
                   </thead>
@@ -58,7 +58,7 @@
                         <td>{{$d->name}}</td>
                        <td>{{$d->prize}}</td>
                        <td>{{$d->total}}</td>
-<td><button class="btn btn-success">view</button></td>
+<td><button class="btn btn-success">View</button></td>
 
                   </tr>
                       @endforeach

@@ -10,8 +10,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Brand</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active"> Brand_Form</li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -48,7 +48,7 @@
                   </div>
     
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Enter User</label>
+                    <label for="exampleFormControlSelect1">Choose User</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="user_id" value="{{old('user_id')}}">
                          @foreach($user as $pro)
                       <option value="{{$pro->id}}">{{$pro->name}}</option>
@@ -65,7 +65,7 @@
                     </select>
                   </div><!--end dropdown-->
 
-                <div class="card-footer">
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
    </form>

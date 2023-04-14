@@ -5,11 +5,10 @@
       <div class="container">
         <div class="row align-items-start align-items-md-center justify-content-end">
           <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-            <h1 class="mb-2">Finding Your Perfect Shoes</h1>
+            <h1 class="mb-2">Finding Your Perfect Product</h1>
             <div class="intro-text text-center text-md-left">
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
-              <p>
-                <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+              <p class="mb-4">An ecommerce website is a digital platform that allows businesses to sell products and services online. These websites provide a convenient and easy way for customers to shop from the comfort of their own homes, without the need to physically visit a brick-and-mortar store.<p>
+    <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
               </p>
             </div>
           </div>
@@ -26,7 +25,8 @@
             </div>
             <div class="text">
               <h2 class="text-uppercase">Free Shipping</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+              <p>Free shipping is a popular marketing strategy used by ecommerce
+                 websites to attract and retain customers. </p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
@@ -35,7 +35,7 @@
             </div>
             <div class="text">
               <h2 class="text-uppercase">Free Returns</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+              <p>Free returns is another popular marketing strategy used by ecommerce websites to build trust and confidence with their customers.</p>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
@@ -44,7 +44,7 @@
             </div>
             <div class="text">
               <h2 class="text-uppercase">Customer Support</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+              <p>Customer support is a critical aspect of any ecommerce website, as it helps businesses to build trust and loyalty with their customers. </p>
             </div>
           </div>
         </div>
@@ -133,12 +133,12 @@
         </div>
         <div class="row align-items-center">
           <div class="col-md-12 col-lg-7 mb-5">
-            <a href="#"><img src="{{asset('uploads/'.$latest->image)}}" width="320px" height="300px"alt="Image placeholder" class="img-fluid rounded"></a>
+            <a href="#"><img src="{{asset('uploads/'.$latest->image)}}" width="635px" height="635px"alt="Image placeholder" class="img-fluid rounded"></a>
           </div>
           <div class="col-md-12 col-lg-5 text-center pl-md-5">
             <h2><a href="#">50% less in all items</a></h2>
-            <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span> September 3, 2018</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
+            <p class="post-meta mb-4">By <a href="#">Shoppers</a> <span class="block-8-sep">&bullet;</span> April 23, 2023</p>
+            <p>Big sales can be a great opportunity for customers to save money on products that they have been wanting to purchase, and for businesses to clear out old inventory and make room for new products.</p>
             <p><a href="#" class="btn btn-primary btn-sm">Shop Now</a></p>
           </div>
         </div>

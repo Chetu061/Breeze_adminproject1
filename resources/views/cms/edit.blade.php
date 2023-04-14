@@ -8,8 +8,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">CMS</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">CMS_Edit_Form </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -41,30 +41,32 @@
   
                 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Enter description</label>
+                      <label for="exampleInputEmail1">Enter Description</label>
                       <textarea type="text" class="form-control" id="description" placeholder="Enter description"
                       name="description" value="{{old('description')}}"></textarea>
                     </div>
           
                 <div class="form-group">
-                  <label for="images">Image</label>
+                  <label for="images">Choose Image</label>
                   <input type="file" aria-describedby="images"  class="form-control"
                   id="images" name="images" value="{{ $data->images }}">
                 </div>
                   
-                <div class="mb-3 col-md-6">
-                  <label class="form-label" for="status">Status Type<span class="text-danger">
-                          *</span></label>
-                  <select class="form-control" name="status"value="{{$data->status}}">
-                      <option value="">Select status Type</option>
-                      <option value="0">Active</option>
-                      <option value="1">Deactive</option>
+                
+                <div class="form-group">
+                  <label class="form-label" for="status">Choose Status<span class="text-danger">
+                    *</span>
+                    </label>
+                  <select class="form-control" name="status" value="{{$data->status}}">
+                      <option value="">Select Status</option>
+                      <option value="1">Active</option>
+                      <option value="0">Deactive</option>
                   </select>
-                </div> 
+                </div>
                 
 <!--end status-->
                 <!-- /.card-body -->
-                <div class="card-footer">
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary">Update</button>
                   <script>
                     ClassicEditor

@@ -34,8 +34,8 @@ public function edit($id)
 {
     $data=Color::find($id);
     $product = Product::all(); //relation changedouble
-
-    return view('color.edit',compact('data','product'));
+    $user=User::all();
+    return view('color.edit',compact('data','product','user'));
 }
 public function index() 
 { //only null record show

@@ -8,8 +8,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Color</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Color </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -41,9 +41,9 @@
                   <thead>
                     <tr>
                       <th style="width: 15px">ID</th>
-                      <th style="width: 10px">color_name</th>
-                      <th style="width: 15px">color_user_id</th>
-                      <th style="width: 30px">color_product_id</th>
+                      <th style="width: 10px"> Name</th>
+                      <th style="width: 15px">User</th>
+                      <th style="width: 30px">Product</th>
                       <th style="width: 40px">Action</th>
                     </tr>
                   </thead>

@@ -8,8 +8,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Product</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Product_Edit_Form </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -43,7 +43,7 @@
                
              
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Enter description</label>
+                      <label for="exampleInputEmail1">Enter Description</label>
                       <input type="text" name="description" class="form-control" value="{{$data->description}}"
                       id="exampleInputEmail1" 
                       placeholder="Enter description">
@@ -51,14 +51,14 @@
                   
                   
                 <div class="form-group">
-                  <label for="image">Image</label>
+                  <label for="image">Choose Image</label>
                   <input type="file" aria-describedby="image"  class="form-control"
                   id="image" name="image" value="{{$data->image}}">
                 </div>
                 
             
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Select Category</label>
+                  <label for="exampleFormControlSelect1">Choose Category</label>
                   <select class="form-control" id="exampleFormControlSelect1" name="category_id">
                       @foreach($cust as $d)
                     <option value="{{$d->id}}">{{$d->title}}</option>
@@ -67,7 +67,7 @@
                 </div>
               <!--end dropdown-->
                 <!-- /.card-body -->
-                <div class="card-footer">
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>
               </form>

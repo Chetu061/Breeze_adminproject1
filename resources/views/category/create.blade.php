@@ -10,8 +10,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Category</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Category_Form </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -49,23 +49,25 @@
                   </div>
                  
                   <div class="form-group">
-                    <label for="image">Image</label>
+                    <label for="image">Choose Image</label>
                     <input type="file" aria-describedby="image"  class="form-control" 
                     id="image" name="image" >
                   </div>
 
                  <div class="form-group">
-                    <label class="form-label" for="status">Status Type
-                      </label>
+                    <label class="form-label" for="status"> Choose Status
+                      </label><span class="text-danger">
+                        *</span>
                     <select class="form-control" name="status" value="{{old('status')}}">
                         <option value="">Select status</option>
-                        <option value="0">Deactive</option>
                         <option value="1">Active</option>
+                        <option value="0">Deactive</option>
+                        
                     </select>
                   </div>
                 
                   
-                <div class="card-footer">
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
    </form>

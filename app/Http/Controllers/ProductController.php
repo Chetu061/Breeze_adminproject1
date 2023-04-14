@@ -22,7 +22,7 @@ public function store(Request $request)
     $data=new Product();
     $data->title=$request->title;
     $data->description=$request->description;
-    if ($request->hasFile(key: 'image')) {
+    if ($request->hasFile('image')) {
         $file = $request->image;
         $extension = $file->getClientOriginalExtension();
         $filename = time() . '.' . $extension;
@@ -42,7 +42,7 @@ public function index()
 public function edit($id)
 {
     $data=Product::find($id);
-     $cust=Category::all();
+     $cust=Category::where('status','=',1)->get();
     return view('product.edit',compact('data','cust'));
 }
 public function update(Request $request,$id)

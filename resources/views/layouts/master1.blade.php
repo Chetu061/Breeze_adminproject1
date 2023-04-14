@@ -31,10 +31,10 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                  <li><a href="#"><span class="icon icon-person"></span></a></li>
+                  <li><a href="{{route('welcome.form')}}"><span class="icon icon-person"></span></a></li>
                   <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                   <li>
-                    <a href="cart.html" class="site-cart">
+                    <a href="{{route('welcome.cart')}}" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
                       <span class="count">2</span>
                     </a>
@@ -131,17 +131,17 @@
               <h3 class="footer-heading mb-4">Promo</h3>
               <a href="#" class="block-6">
                 <img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-                <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-                <p>Promo from  nuary 15 &mdash; 25, 2019</p>
+                <h3 class="font-weight-light  mb-0">Finding Your Perfect Product</h3>
+                <p>Promo from  April 15 to 25, 2023</p>
               </a>
             </div>
             <div class="col-md-6 col-lg-3">
               <div class="block-5 mb-5">
                 <h3 class="footer-heading mb-4">Contact Info</h3>
                 <ul class="list-unstyled">
-                  <li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                  <li class="phone"><a href="tel://23923929210">+2 392 3929 210</a></li>
-                  <li class="email">emailaddress@domain.com</li>
+                  <li class="address">Khat Road Shanti Nagar Bhandara, Maharashtra</li>
+                  <li class="phone"><a href="tel://23923929210">+91 8412025133</a></li>
+                  <li class="email">pritimalode98@gmail.com</li>
                 </ul>
               </div>
   
@@ -160,7 +160,12 @@
             <div class="col-md-12">
               <p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+              Copyright &copy;<script data-cfasync="false"
+               src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+              </script><script>document.write(new Date().getFullYear());</script> 
+              All rights reserved | This template is made with
+               <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" 
+               class="text-primary">Priti Malode</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               </p>
             </div>

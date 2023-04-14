@@ -8,8 +8,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Brand</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">Brand_Edit_Form </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -40,24 +40,27 @@
             <form id="quickForm" action="{{route('brand.update',$data->id)}}" method="post">
               @csrf
             
-                <div class="card-body">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Enter Name</label>
+                  <input type="text" name="name" class="form-control" value="{{$data->name}}"id="exampleInputEmail1" 
+                  placeholder="Enter name">
+                </div>
+              
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Enter Name</label>
-                    <input type="text" name="name" class="form-control" value="{{$data->name}}"id="exampleInputEmail1" 
-                    placeholder="Enter name">
+                    <label for="exampleFormControlSelect1">Choose User</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="user_id"
+                     value="{{$data->user_id}}">
+                         @foreach($user as $pro)
+                      <option value="{{$pro->id}}">{{$pro->name}}</option>
+                        @endforeach 
+                    </select>
                   </div>
-
-                
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Enter UserID </label>
-                    <input type="number" name="user_id" class="form-control" value="{{$data->user_id}}"id="exampleInputEmail1" 
-                    placeholder="Enter user_id ">
-                  </div>
-                
                       
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">Choose Product_id</label>
-                      <select class="form-control" id="exampleFormControlSelect1" name="product_id" value="{{old('product_id')}}">
+                      <label for="exampleFormControlSelect1">Choose Product</label>
+                      <select class="form-control" id="exampleFormControlSelect1" name="product_id" 
+                      value="{{$data->product_id}}">
                            @foreach($product as $pro)
                         <option value="{{$pro->id}}">{{$pro->title}}</option>
                           @endforeach 
@@ -65,7 +68,7 @@
                     </div> 
                   
   
-                <div class="card-footer">
+                <div class="form-group">
                   <button type="submit" class="btn btn-primary">Update</button>
                 </div>
    </form>

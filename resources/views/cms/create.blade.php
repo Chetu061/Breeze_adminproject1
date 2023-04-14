@@ -9,8 +9,8 @@
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">CMS</a></li>
-        <li class="breadcrumb-item active">Dashboard </li>
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active">CMS_Form </li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -48,23 +48,22 @@
                   </div>
                  
                   <div class="form-group">
-                      <label for="exampleInputEmail1">Enter description</label>
+                      <label for="exampleInputEmail1">Enter Description</label>
                       <textarea type="text" class="form-control" id="description" placeholder="Enter description"
           name="description" value="{{old('description')}}"></textarea>
                     </div>
                   
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="images">Images:</label>
-                      <div class="col-sm-10">
+                      <label class="control-label " for="images">Choose Image</label>
                       <input required  type="file" aria-describedby="images"  class="form-control" 
                       id="images" name="images[]" value="images" multiple>
                       </div>
-                    </div>
+                  
  
 
 
                     <div class="form-group">
-                      <label class="form-label" for="status">Status Type
+                      <label class="form-label" for="status">Choose Status
                         </label>
                       <select class="form-control" name="status" value="{{old('status')}}">
                           <option value="">Select status</option>
@@ -74,7 +73,7 @@
                     </div>
                     
                   
-                    <div class="card-footer">
+                    <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>
                     <script>
                     ClassicEditor
