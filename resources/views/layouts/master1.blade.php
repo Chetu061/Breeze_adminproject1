@@ -31,7 +31,7 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
-                  <li><a href="{{route('welcome.form')}}"><span class="icon icon-person"></span></a></li>
+                  <li><a href="{{route('welcome.userprofile')}}"><span class="icon icon-person"></span></a></li>
                   <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                   <li>
                     <a href="{{route('welcome.cart')}}" class="site-cart">
@@ -90,6 +90,8 @@
             {{-- <li><a href="#">Catalogue</a></li> --}}
             {{-- <li><a href="#">New Arrivals</a></li>  --}}
             <li><a href="{{route('welcome.contact')}}">Contact</a></li>
+            <li><a href="{{route('register')}}">Register</a></li>
+            <li><a href="{{route('login')}}">Login</a></li>
           </ul>
         </div>
       </nav>

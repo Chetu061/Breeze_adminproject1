@@ -62,11 +62,12 @@ return view('welcome',compact('products','latest','category'));
         return view('welcome.shopsingle');
 
     }
-    public function form()
+    public function userprofile()
     {
-        return view('welcome.form');
+        return view('welcome.userprofile');
 
     }
+    
 }
 
 

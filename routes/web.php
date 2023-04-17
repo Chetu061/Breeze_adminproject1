@@ -11,6 +11,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserprofileController;
 
 
 
@@ -78,8 +79,8 @@ Route::get('product/delete/{id}',[ProductController::class,'delete'])->name('pro
 //cms route
 Route::get('cms/create',[CmsController::class,'create'])->name('cms.create');
 Route::post('cms/store',[CmsController::class,'store'])->name('cms.store');
- Route::get('cms',[CmsController::class,'index'])->name('cms');
- Route::get('cms/edit/{id}',[CmsController::class,'edit'])->name('cms.edit');
+Route::get('cms',[CmsController::class,'index'])->name('cms');
+Route::get('cms/edit/{id}',[CmsController::class,'edit'])->name('cms.edit');
 Route::post('cms/update/{id}',[CmsController::class,'update'])->name('cms.update');
 Route::get('cms/delete/{id}',[CmsController::class,'delete'])->name('cms.delete');
 //Softdelete route
@@ -133,4 +134,7 @@ Route::get('admin',[WelcomeController::class,'admin'])->name('welcome.admin');
 //route of contact
 Route::get('contacts',[ContactController::class,'index'])->name('contacts');
 Route::post('contact_form/store',[ContactController::class,'store'])->name('contact_form.store');
-Route::get('form',[WelcomeController::class,'form'])->name('welcome.form');
+//route of form
+Route::get('userprofile',[WelcomeController::class,'userprofile'])->name('welcome.userprofile');
+Route::get('userprofiles',[UserprofileController::class,'index'])->name('userprofiles');
+Route::post('userprofile/store',[UserprofileController::class,'store'])->name('userprofile.store');
