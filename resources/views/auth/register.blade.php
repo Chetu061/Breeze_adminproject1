@@ -1,8 +1,17 @@
+@extends('layouts.master1')
+@section('content')
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}" 
+     {{-- message code --}}
+     @if(session()->has('message'))
+     <div class="alert alert-success">
+      {{session()->get ('message')}}
+     </div>
+        @endif
+    <form method="POST" action="{{route('register') }}" 
     enctype="multipart/form-data">
         @csrf
 
+        
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
@@ -58,3 +67,4 @@
         </div>
     </form>
 </x-guest-layout>
+@endsection

@@ -52,10 +52,10 @@ class RegisteredUserController extends Controller
         }
         $user->role=2;
         $user->save();
-        event(new Registered($user));
-        Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
-    }
+        // event(new Registered($user));
+        // Auth::login($user);
+return redirect()->route('register')->with('message','Data Registerd Successfully');
+}
 
 
 }
